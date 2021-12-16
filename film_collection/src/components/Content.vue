@@ -1,7 +1,6 @@
-<template>
-  <div class="content">
-<h1>wfwfewf</h1>
-  </div>
+<template lang="pug">
+
+
 </template>
 
 <script lang="ts">
