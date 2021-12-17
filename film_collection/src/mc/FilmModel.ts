@@ -1,4 +1,4 @@
-import { Model } from '@zidadindimon/vue-mc';
+import { Model,ModelApiProvider } from '@zidadindimon/vue-mc';
 import {FilmInfo} from '@/mc/types/filmInfo.types';
 
 
@@ -11,4 +11,7 @@ export class FilmModel extends Model<FilmInfo> implements FilmInfo{
     title: string = null;
     vote_average: number = null;
     vote_count: number = null;
+    release_date: number = null;
+
 }
+

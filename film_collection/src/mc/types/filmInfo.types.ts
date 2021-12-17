@@ -6,5 +6,10 @@ export interface FilmInfo {
     popularity:number,
     original_title:string,
     genre_ids:number| string,
-    overview:string
+    overview:string,
+    release_date:number
+}
+
+export interface ModelFetchDto {
+    id: number;
 }
