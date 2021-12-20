@@ -3,6 +3,7 @@
   <FilmListItem
   v-for="item in collection"
   :key="item.id"
+  :model="item"
   ></FilmListItem>
   </div>
 </template>

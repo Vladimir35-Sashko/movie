@@ -14,7 +14,7 @@ export const filmModelApiProvider:ModelApiProvider<FilmInfo> ={
         const response = await axios.get(
             `/trending/movie/week?api_key=${API_KEY}`
         );
-        return await response.data;
+        return response.data;
     }
 }
 
@@ -24,7 +24,13 @@ export const filmCollectionProvider: CollectionApiProvider<Film> = {
         const response = await axios.get(
             `/trending/movie/week?api_key=${API_KEY}`
         );
-        return await response.data;
-
-    }
-}
+        const data:Film[] = response.data.results;
+        return {
+            page: 1,
+            pages:1,
+            total: data.length,
+            content:data,
+            size: data.length,
+        };
+    },
+};

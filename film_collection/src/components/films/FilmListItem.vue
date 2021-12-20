@@ -9,7 +9,7 @@
 <!--          <img :src="source" :alt="posterAlt" class="content__poster" />-->
         </div>
         <div class="card__description">
-          <p class="content__title">{{ model.title }}</p>
+          <p class="content__title">{{ model.title}}</p>
           <p class="content__info">
             <span class="content__genres">{{ model.genre_ids }}</span>
             <span class="content__year">{{ model.release_date }}</span>
