@@ -1,5 +1,5 @@
 <template >
-  <div>
+  <div class="content_cards">
   <FilmListItem
   v-for="item in collection"
   :key="item.id"
@@ -33,5 +33,15 @@ export default class FilmList extends Vue {
 </script>
 
 <style scoped>
+.content_cards {
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(274px, 1fr));
+  grid-auto-rows: max-content;
+  grid-gap: 30px;
+  align-items: stretch;
+  justify-content: center;
+  transition: opacity 200ms ease;
+}
 
 </style>

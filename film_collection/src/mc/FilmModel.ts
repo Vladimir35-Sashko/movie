@@ -1,7 +1,5 @@
-import {Model, ModelApiProvider} from '@zidadindimon/vue-mc';
+import {Model} from '@zidadindimon/vue-mc';
 import {FilmInfo} from '@/mc/types/filmInfo.types';
-// import {filmModelApiProvider} from '@/services/api-provider.service'
-
 
 export class FilmModel extends Model<FilmInfo> implements FilmInfo{
     genre_ids: number| string = null;
@@ -13,10 +11,8 @@ export class FilmModel extends Model<FilmInfo> implements FilmInfo{
     vote_average: number = null;
     vote_count: number = null;
     release_date: number = null;
+    poster_path: any = null;
 
-    // protected api(): ModelApiProvider<FilmInfo> {
-    //     return filmModelApiProvider;
-    // }
 
 }
 

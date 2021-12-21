@@ -7,7 +7,9 @@ export interface FilmInfo {
     original_title:string,
     genre_ids:number| string,
     overview:string,
-    release_date:number
+    release_date:number,
+    poster_path: any,
+
 }
 
 export interface ModelFetchDto {
