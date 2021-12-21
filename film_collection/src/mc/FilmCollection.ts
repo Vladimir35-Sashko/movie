@@ -6,8 +6,6 @@ import { filmCollectionProvider} from '@/services/api-provider.service'
 
 export class FilmCollection extends Collection<FilmModel, Film> {
     protected model(item?: Film | FilmModel): {new(): FilmModel} {
-        console.log(item);
-
         return FilmModel;
     }
 

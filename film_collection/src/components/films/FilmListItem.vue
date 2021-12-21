@@ -1,9 +1,9 @@
 <template>
   <ul class="content__cards">
-    <li>
-        class="content__card content__card__show__info"
+    <li
+        class="content__card content__card__show__info">
 <!--        @click="showPopupInfo"-->
-    >
+
 <!--      <a href="#" :data-id="model.id" class="content__link">-->
         <div class="poster__wraper">
 <!--          <img :src="source" :alt="posterAlt" class="content__poster" />-->
@@ -32,6 +32,13 @@ export default class FilmListItem extends Vue {
 }
 </script>
 
-<style scoped>
-
+<style scoped >
+.content__cards{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  }
+.card__description{
+  cursor: pointer;
+}
 </style>
