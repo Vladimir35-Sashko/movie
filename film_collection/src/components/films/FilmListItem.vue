@@ -50,7 +50,6 @@
     <ul class="content__cards">
     <li
         class="content__card content__card__show__info" @click="showPopupInfo">
-<!--      <a href="#" :data-id="model.id" class="content__link">-->
         <div class="poster__wraper">
           <img :src="source()" alt="Poster" class="content__poster" />
         </div>
@@ -62,7 +61,6 @@
             <span class="content__rating">{{ model.vote_average }}</span>
           </p>
         </div>
-<!--      </a>-->
     </li>
   </ul>
   </div>
@@ -172,14 +170,12 @@ padding-block: 10px;
   overflow-y: auto;
   max-width: 480px;
 }
-
 .lightbox__image {
   width: auto;
   height: auto;
   border-radius: 3%;
   margin: 0 auto 30px;
 }
-
 .lightbox__button {
   height: 30px;
   width: 30px;
@@ -196,7 +192,6 @@ padding-block: 10px;
   transform: rotate(-90deg);
   border-radius: 50%;
 }
-
 .lightbox__button:hover,
 .lightbox__button:focus {
   background-color: rgba(0, 0, 0, 0.5);
