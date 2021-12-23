@@ -1,11 +1,8 @@
-<template >
-  <div class="content_cards">
-  <FilmListItem
-  v-for="item in collection"
-  :key="item.id"
-  :model="item"
-  ></FilmListItem>
-  </div>
+<template lang="pug">
+  .content_cards
+    FilmListItem(v-for="item in collection"
+     :key="item.id"
+     :model="item")
 </template>
 
 <script lang="ts">
