@@ -11,7 +11,7 @@ export class FilmModel extends Model<FilmInfo> implements FilmInfo{
     vote_average: number = null;
     vote_count: number = null;
     release_date: number = null;
-    poster_path: any = null;
+    poster_path: string = null;
 
 
 }

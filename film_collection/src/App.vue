@@ -14,7 +14,6 @@ import FilmList from "@/components/films/FilmList.vue";
 @Component({
   components: {
     FilmList
-
   },
 })
 export default class App extends Vue {}

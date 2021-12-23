@@ -8,7 +8,7 @@ export interface FilmInfo {
     genre_ids:number| string,
     overview:string,
     release_date:number,
-    poster_path: any,
+    poster_path: string,
 
 }
 

@@ -1,69 +1,43 @@
-<template>
-  <div>
-    <Modal
-        v-if="isInfoPopupVisible"
-        @closePopup="closeInfoPopup"
-    >
-      <div class='lightbox__overlay' ref="popup_wrapper"></div>
-      <div class='lightbox__content'>
-        <button type='button' class='lightbox__button' data-action='close-lightbox'
-                @click="closeInfoPopup">
-        </button>
-        <img
-            class='lightbox__image'
-            :src='source()'
-            alt='Poster'
-        />
-        <div class='lightbox__information'>
-          <h2 class='lightbox__title'> {{model.title}}</h2>
-          <ul class='lightbox__list list'>
-            <li class='lightbox__list__item'>
-              <p class='item__list-title'> Vote / Votes</p>
-              <p class=''>
-                <span class='content__rating'> {{model.vote_average}}</span>
-                <span class='content__vote'>{{model.vote_count}}</span>
-              </p>
-            </li>
-            <li class='lightbox__list__item'>
-              <p class='item__list-title'>Popularity</p>
-              <p class='item-info-popul'>
-                {{model.popularity}}</p>
-            </li>
-            <li class='lightbox__list__item'>
-              <p class='item__list-title'>Original Title</p>
-              <span class='item-info-orig'>
-            {{model.original_title}}
-          </span>
-            </li>
-            <li class='lightbox__list__item'>
-              <p class='item__list-title'>Genre</p>
-              <span class='item-info-gen'>{{model.genre_ids}}</span>
-            </li>
-          </ul>
-          <h3 class='lightbox__about'>About</h3>
-          <p class='lightbox__text'>{{model.overview}}
-          </p>
-        </div>
-      </div>
-    </Modal>
+<template lang="pug">
+  div
+    modal(v-if='isInfoPopupVisible' @closepopup='closeInfoPopup')
+      .lightbox__overlay(ref='popup_wrapper')
+      .lightbox__content
+        button.lightbox__button(type='button' data-action='close-lightbox' @click='closeInfoPopup')
+        img.lightbox__image(:src='source()' alt='Poster')
+        .lightbox__information
+          h2.lightbox__title  {{model.title}}
+          ul.lightbox__list.list
+            li.lightbox__list__item
+              p.item__list-title  Vote / Votes
+              p
+                span.content__rating  {{model.vote_average}}
+                span.content__vote {{model.vote_count}}
+            li.lightbox__list__item
+              p.item__list-title Popularity
+              p.item-info-popul
+                | {{model.popularity}}
+            li.lightbox__list__item
+              p.item__list-title Original Title
+              span.item-info-orig
+                | {{model.original_title}}
+            li.lightbox__list__item
+              p.item__list-title Genre
+              span.item-info-gen {{model.genre_ids}}
+          h3.lightbox__about About
+          p.lightbox__text
+            | {{model.overview}}
+    ul.content__cards
+      li.content__card.content__card__show__info(@click='showPopupInfo')
+        .poster__wrapper
+          img.content__poster(:src='source()' alt='Poster')
+        .card__description
+          p.content__title {{ model.title}}
+          p.content__info
+            span.content__genres {{ model.genre_ids }}
+            span.content__year {{ model.release_date }}
+            span.content__rating {{ model.vote_average }}
 
-    <ul class="content__cards">
-    <li
-        class="content__card content__card__show__info" @click="showPopupInfo">
-        <div class="poster__wraper">
-          <img :src="source()" alt="Poster" class="content__poster" />
-        </div>
-        <div class="card__description">
-          <p class="content__title">{{ model.title}}</p>
-          <p class="content__info">
-            <span class="content__genres">{{ model.genre_ids }}</span>
-            <span class="content__year">{{ model.release_date }}</span>
-            <span class="content__rating">{{ model.vote_average }}</span>
-          </p>
-        </div>
-    </li>
-  </ul>
-  </div>
 
 </template>
 
@@ -79,13 +53,13 @@ import Modal from "@/components/Modal.vue";
 export default class FilmListItem extends Vue {
     isInfoPopupVisible: boolean = null;
 
-  showPopupInfo(){
-    this.isInfoPopupVisible = true;
+  showPopupInfo(): boolean{
+    return this.isInfoPopupVisible = true;
   }
-  closeInfoPopup(){
-    this.isInfoPopupVisible = false;
+  closeInfoPopup(): boolean{
+    return this.isInfoPopupVisible = false;
   }
-    source(){
+    source(): string{
     return `https://image.tmdb.org/t/p/w300${this.model.poster_path}`
   }
 
@@ -106,9 +80,9 @@ export default class FilmListItem extends Vue {
   transition: transform 200ms ease;
 }
 
-.poster__wraper {
+.poster__wrapper {
   pointer-events: none;
-background-color: #f7f7f7;
+  background-color: #f7f7f7;
   background-repeat: no-repeat;
   background-position: center;
   overflow: hidden;
